@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a-card style="margin-top: 24px" :bordered="false" title="参加过的考试">
+    <a-card style="margin-top: 24px" :bordered="false" title="ᠣᠷᠣᠯᠴᠠᠵᠤ ᠥᠩᠭᠡᠷᠡᠭᠰᠡᠨ ᠰᠢᠯᠭᠠᠯᠲᠠ">
       <div slot="extra">
         <a-input-search style="margin-left: 16px; width: 272px;"/>
       </div>
@@ -11,7 +11,7 @@
             <a slot="title">{{ item.exam.examName }}</a>
           </a-list-item-meta>
           <div slot="actions">
-            <a @click="viewExamRecordDetail(item.examRecord)">查看考试详情</a>
+            <a @click="viewExamRecordDetail(item.examRecord)">ᠰᠢᠯᠭᠠᠯᠲᠠ ᠶᠢᠨ ᠨᠠᠷᠢᠨ ᠪᠠᠶᠢᠳᠠᠯ ᠢ ᠦᠵᠡᠬᠦ</a>
           </div>
           <div class="list-content">
             <div class="list-content-item">
@@ -23,7 +23,7 @@
               <p>{{ item.examRecord.examJoinDate }}</p>
             </div>
             <div class="list-content-item">
-              <span>分数</span>
+              <span>ᠪᠤᠲᠠᠷᠬᠠᠶ</span>
               <p>{{ item.examRecord.examJoinScore }}</p>
             </div>
           </div>
@@ -108,5 +108,29 @@ export default {
       margin-bottom: 0;
       line-height: 22px;
     }
+  }
+
+  .bootstrap-table .fixed-table-container .table thead th .th-inner {
+    -webkit-writing-mode: vertical-lr;
+  }
+
+  .ant-breadcrumb a {
+    -webkit-writing-mode: vertical-lr;
+  }
+
+  .ant-breadcrumb span {
+    -webkit-writing-mode: vertical-lr;
+  }
+
+  .page-header .detail .main .title {
+    -webkit-writing-mode: vertical-lr;
+  }
+
+  .ant-menu-item span, .ant-menu-submenu-title span {
+    -webkit-writing-mode: vertical-lr;
+  }
+
+  .ant-layout-header {
+    height: 164px;
   }
 </style>

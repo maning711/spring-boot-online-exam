@@ -41,14 +41,14 @@ export default {
       // 表头
       columns: [
         {
-          title: '序号',
+          title: 'ᠳᠤᠭᠠᠷ',
           field: 'serial',
           formatter: function (value, row, index) {
             return index + 1 // 这样的话每翻一页都会重新从1开始，
           }
         },
         {
-          title: '题干',
+          title: 'ᠭᠣᠣᠯ ᠰᠡᠳᠦᠪ',
           field: 'name',
           width: 200,
           formatter: (value, row) => {
@@ -61,7 +61,7 @@ export default {
           }
         },
         {
-          title: '解析',
+          title: 'ᠵᠠᠳᠠᠯᠤᠭ',
           field: 'description',
           width: 200,
           formatter: (value, row) => {
@@ -74,7 +74,7 @@ export default {
           }
         },
         {
-          title: '分数',
+          title: 'ᠪᠤᠲᠠᠷᠬᠠᠶ',
           field: 'score',
           formatter: (value, row) => {
             return '<div class="question-score">' + value + '</div>'
@@ -87,11 +87,14 @@ export default {
           }
         },
         {
-          title: '创建人',
-          field: 'creator'
+          title: 'ᠡᠭᠦᠰᠭᠡᠨ ᠪᠠᠶᠢᠭᠤᠯᠤᠭᠴᠢ',
+          field: 'creator',
+          formatter: (value, row) => {
+            return '<div style="-webkit-writing-mode: vertical-lr;">' + value + '</div>'
+          }
         },
         {
-          title: '难度',
+          title: 'ᠬᠦᠴᠢᠷ ᠦᠨ ᠬᠡᠮᠵᠢᠶᠡ',
           field: 'level',
           formatter: (value, row) => {
             return '<div class="question-level">' + value + '</div>'
@@ -127,10 +130,10 @@ export default {
           }
         },
         {
-          title: '题型',
+          title: 'ᠰᠡᠳᠦᠪ ᠦᠨ ᠬᠡᠯᠪᠡᠷᠢ',
           field: 'type',
           formatter: (value, row) => {
-            return '<div class="question-type">' + value + '</div>'
+            return '<div class="question-type" style="-webkit-writing-mode: vertical-lr;">' + value + '</div>'
           },
           events: {
             'click .question-type': function (e, value, row, index) {
@@ -163,10 +166,10 @@ export default {
           }
         },
         {
-          title: '学科',
+          title: 'ᠰᠢᠨᠵᠢᠯᠡᠭᠡᠨ ᠦ ᠰᠠᠯᠠᠭᠠ',
           field: 'category',
           formatter: (value, row) => {
-            return '<div class="question-category">' + value + '</div>'
+            return '<div class="question-category" style="-webkit-writing-mode: vertical-lr;">' + value + '</div>'
           },
           events: {
             'click .question-category': function (e, value, row, index) {
@@ -199,17 +202,17 @@ export default {
           }
         },
         {
-          title: '更新时间',
+          title: 'ᠰᠢᠨᠡᠳᠬᠡᠬᠦ ᠴᠠᠭ',
           field: 'updateTime'
         },
         {
-          title: '操作',
+          title: 'ᠠᠵᠢᠯᠯᠠᠬᠤ',
           field: 'action',
           align: 'center',
           formatter: (value, row) => {
-            return '<button type="button" class="btn btn-success view-question">详情</button>' +
+            return '<button type="button" class="btn btn-success view-question">ᠨᠠᠷᠢᠨ ᠪᠠᠶᠢᠳᠠᠯ</button>' +
               '&nbsp;&nbsp;' +
-              '<button type="button" class="btn btn-success edit-question">编辑</button>'
+              '<button type="button" class="btn btn-success edit-question">ᠨᠠᠶᠢᠷᠠᠭᠤᠯᠤᠭᠴᠢ</button>'
           },
           events: {
             'click .view-question': function (e, value, row, index) {
@@ -354,3 +357,28 @@ export default {
   }
 }
 </script>
+<style lang="less">
+  .bootstrap-table .fixed-table-container .table thead th .th-inner {
+    -webkit-writing-mode: vertical-lr;
+  }
+
+  .ant-breadcrumb a {
+    -webkit-writing-mode: vertical-lr;
+  }
+
+  .ant-breadcrumb span {
+    -webkit-writing-mode: vertical-lr;
+  }
+
+  .page-header .detail .main .title {
+    -webkit-writing-mode: vertical-lr;
+  }
+
+  .ant-menu-item span, .ant-menu-submenu-title span {
+    -webkit-writing-mode: vertical-lr;
+  }
+
+  .ant-layout-header {
+    height: 164px;
+  }
+</style>

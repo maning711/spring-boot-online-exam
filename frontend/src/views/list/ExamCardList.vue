@@ -12,8 +12,8 @@
             <div class="meta-content" slot="description">{{ item.content }}</div>
           </a-card-meta>
           <template class="ant-card-actions" slot="actions">
-            <a>满分：{{ item.score }}分</a>
-            <a>限时：{{ item.elapse }}分钟</a>
+            <a>ᠳᠦᠭᠦᠷᠡᠩ ᠬᠤᠪᠢ：{{ item.score }}ᠬᠤᠪᠢ</a>
+            <a>ᠴᠠᠭ ᠬᠢᠵᠠᠭᠠᠷᠯᠠᠬᠤ：{{ item.elapse }}ᠮᠢᠨᠦᠲ</a>
           </template>
         </a-card>
       </a-list-item>
@@ -28,7 +28,7 @@ export default {
   name: 'ExamCardList',
   data () {
     return {
-      description: '您可以随意点击下面的考试卡片开始一场属于您的考试',
+      description: 'ᠲᠠ ᠳᠤᠷᠠ ᠪᠠᠷ ᠢᠶᠠᠨ ᠳᠣᠣᠷᠠᠬᠢ ᠰᠢᠯᠭᠠᠯᠲᠠ ᠶᠢᠨ ᠺᠠᠷᠲ ᠢ ᠳᠠᠷᠤᠵᠤ ᠥᠪᠡᠷ ᠦᠨ ᠭᠡᠰᠡᠨ ᠰᠢᠯᠭᠠᠯᠲᠠ ᠪᠠᠨ ᠡᠬᠢᠯᠡᠭᠦᠯᠵᠦ ᠪᠣᠯᠤᠨᠠ',
       extraImage: 'https://gw.alipayobjects.com/zos/rmsportal/RzwpdLnhmvDJToTdfDPe.png',
       dataSource: []
     }
@@ -113,5 +113,13 @@ export default {
     height: 64px;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+  }
+
+  .ant-layout-header {
+    height: 164px;
+  }
+
+  .page-header .breadcrumb {
+    -webkit-writing-mode: vertical-lr;
   }
 </style>

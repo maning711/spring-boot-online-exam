@@ -23,24 +23,24 @@
           :style="{ height: '100%', borderRight: 0 }"
         >
           <a-sub-menu key="question_radio">
-            <span slot="title" v-if="examDetail.exam"><a-icon type="check-circle" theme="twoTone"/>单选题(每题{{ examDetail.exam.examScoreRadio }}分)</span>
+            <span slot="title" v-if="examDetail.exam"><a-icon type="check-circle" theme="twoTone"/>ᠭᠠᠭᠴᠠ ᠰᠣᠩᠭᠤᠯᠲᠠᠲᠤ ᠰᠡᠳᠦᠪ(ᠰᠡᠳᠦᠪ ᠪᠦᠷᠢ{{ examDetail.exam.examScoreRadio }}ᠬᠤᠪᠢ)</span>
             <a-menu-item v-for="(item, index) in examDetail.radioIds" :key="item" @click="getQuestionDetail(item)">
               <a-icon type="eye" theme="twoTone" twoToneColor="#52c41a" v-if="answersMap.get(item)"/>
-              题目{{ index + 1 }}
+              ᠰᠡᠳᠦᠪ{{ index + 1 }}
             </a-menu-item>
           </a-sub-menu>
           <a-sub-menu key="question_check">
-            <span slot="title" v-if="examDetail.exam"><a-icon type="check-square" theme="twoTone"/>多选题(每题{{ examDetail.exam.examScoreCheck }}分)</span>
+            <span slot="title" v-if="examDetail.exam"><a-icon type="check-square" theme="twoTone"/>ᠣᠯᠠᠨ ᠬᠠᠷᠢᠭᠤᠯᠲᠠ ᠲᠠᠢ ᠰᠣᠩᠭᠤᠬᠤ ᠰᠡᠳᠦᠪ(ᠰᠡᠳᠦᠪ ᠪᠦᠷᠢ{{ examDetail.exam.examScoreCheck }}ᠬᠤᠪᠢ)</span>
             <a-menu-item v-for="(item, index) in examDetail.checkIds" :key="item" @click="getQuestionDetail(item)">
               <a-icon type="eye" theme="twoTone" twoToneColor="#52c41a" v-if="answersMap.get(item)"/>
-              题目{{ index + 1 }}
+              ᠰᠡᠳᠦᠪ{{ index + 1 }}
             </a-menu-item>
           </a-sub-menu>
           <a-sub-menu key="question_judge">
-            <span slot="title" v-if="examDetail.exam"><a-icon type="like" theme="twoTone"/>判断题(每题{{ examDetail.exam.examScoreJudge }}分)</span>
+            <span slot="title" v-if="examDetail.exam"><a-icon type="like" theme="twoTone"/>ᠮᠠᠭᠠᠳᠯᠠᠬᠤ ᠰᠡᠳᠦᠪ(ᠰᠡᠳᠦᠪ ᠪᠦᠷᠢ{{ examDetail.exam.examScoreJudge }}ᠬᠤᠪᠢ)</span>
             <a-menu-item v-for="(item, index) in examDetail.judgeIds" :key="item" @click="getQuestionDetail(item)">
               <a-icon type="eye" theme="twoTone" twoToneColor="#52c41a" v-if="answersMap.get(item)"/>
-              题目{{ index + 1 }}
+              ᠰᠡᠳᠦᠪ{{ index + 1 }}
             </a-menu-item>
           </a-sub-menu>
         </a-menu>
@@ -48,7 +48,7 @@
       <a-layout :style="{ marginLeft: '200px' }">
         <a-layout-content :style="{ margin: '24px 16px 0',height: '84vh', overflow: 'initial' }">
           <div :style="{ padding: '24px', background: '#fff',height: '84vh'}">
-            <span v-show="currentQuestion === ''" style="font-size: 30px;font-family: Consolas">欢迎参加考试，请点击左侧题目编号开始答题</span>
+            <span v-show="currentQuestion === ''" style="font-size: 30px;font-family: Consolas">ᠰᠢᠯᠭᠠᠯᠲᠠ ᠳᠤ ᠣᠷᠣᠯᠴᠠᠬᠤ ᠶᠢ ᠪᠠᠶᠠᠷᠯᠠᠨ ᠤᠭᠲᠤᠵᠤ ᠪᠠᠶᠢᠨᠠ᠂ ᠵᠡᠭᠦᠨ ᠲᠠᠯᠠ ᠶᠢᠨ ᠰᠡᠳᠦᠪ ᠦᠨ ᠳᠤᠭᠠᠷ ᠢ ᠳᠠᠷᠤᠵᠤ ᠡᠬᠢᠯᠡᠨ ᠰᠡᠳᠦᠪ ᠬᠠᠷᠢᠭᠤᠯᠤᠭᠠᠷᠠᠢ</span>
             <strong>{{ currentQuestion.type }} </strong> <p v-html="currentQuestion.name"></p>
             <!-- 单选题和判断题 --> <!-- key不重复只需要在一个for循环中保证即可 -->
             <a-radio-group @change="onRadioChange" v-model="radioValue" v-if="currentQuestion.type === '单选题' || currentQuestion.type === '判断题'">

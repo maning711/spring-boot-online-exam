@@ -53,11 +53,11 @@
       <a-layout :style="{ marginLeft: '200px' }">
         <a-layout-content :style="{ margin: '24px 16px 0',height: '84vh', overflow: 'initial' }">
           <div :style="{ padding: '24px', background: '#fff',height: '84vh'}">
-            <span v-if="currentQuestion === ''" style="font-size: 30px;font-family: Consolas">欢迎查看本次考试情况，点击左侧题目编号可以查看答题详情</span>
+            <span v-if="currentQuestion === ''" style="font-size: 30px;font-family: Consolas">ᠲᠤᠰ ᠤᠳᠠᠭᠠᠨ ᠤ ᠰᠢᠯᠭᠠᠯᠲᠠ ᠶᠢᠨ ᠪᠠᠶᠢᠳᠠᠯ ᠢ ᠦᠵᠡᠬᠦ ᠶᠢ ᠪᠠᠶᠠᠷᠯᠠᠨ ᠤᠭᠲᠤᠵᠤ ᠪᠠᠶᠢᠨᠠ᠂ ᠵᠡᠭᠦᠨ ᠲᠠᠯᠠ ᠶᠢᠨ ᠰᠡᠳᠦᠪ ᠦᠨ ᠳ᠋ᠤᠭᠠᠷ ᠢ ᠳᠠᠷᠤᠪᠠᠯ ᠰᠡᠳᠦᠪ ᠬᠠᠷᠢᠭᠤᠯᠤᠭᠰᠠᠨ ᠨᠠᠷᠢᠨ ᠪᠠᠶᠢᠳᠠᠯ ᠢ ᠦᠵᠡᠵᠦ ᠪᠣᠯᠤᠨᠠ</span>
             <span v-if="currentQuestion !== ''">
               <strong>{{ currentQuestion.type }} </strong> <p v-html="currentQuestion.name"></p>
               <strong style="color: green;" v-if="questionRight">本题您答对啦！</strong>
-              <strong style="color: red;" v-if="!questionRight">本题您答错啦！</strong>
+              <strong style="color: red;" v-if="!questionRight">ᠲᠣᠰ ᠰᠡᠳᠦᠪ ᠢ ᠲᠠ ᠪᠤᠷᠤᠭᠤ ᠬᠠᠷᠢᠭᠤᠯᠪᠠ！</strong>
             </span>
             <br><br>
             <!-- 单选题和判断题 --> <!-- key不重复只需要在一个for循环中保证即可 -->
@@ -69,7 +69,7 @@
 
             <!-- 题目出错的时候才显示这块 -->
             <div v-if="!questionRight && currentQuestion!=='' && (currentQuestion.type === '单选题' || currentQuestion.type === '判断题')">
-              <span style="color: red;"><br/>正确答案是：<br/></span>
+              <span style="color: red;"><br/>ᠵᠥᠪ ᠬᠠᠷᠢᠭᠤᠯᠲᠠ ᠨᠢ：<br/></span>
               <a-radio-group v-model="radioRightValue">
                 <a-radio v-for="option in currentQuestion.options" :key="option.questionOptionId" :style="optionStyle" :value="option.questionOptionId">
                   {{ option.questionOptionContent }}
@@ -86,7 +86,7 @@
 
             <!-- 题目出错的时候才显示这块 -->
             <div v-if="!questionRight && currentQuestion!=='' && currentQuestion.type === '多选题'">
-              <span style="color: red;"><br/>正确答案是：<br/></span>
+              <span style="color: red;"><br/>ᠵᠥᠪ ᠬᠠᠷᠢᠭᠤᠯᠲᠠ ᠨᠢ：<br/></span>
               <a-checkbox-group v-model="checkRightValues">
                 <a-checkbox v-for="option in currentQuestion.options" :key="option.questionOptionId" :style="optionStyle" :value="option.questionOptionId">
                   {{ option.questionOptionContent }}
@@ -94,7 +94,7 @@
               </a-checkbox-group>
             </div>
 
-            <span style="color: red;"><br/>答案解析：<br/></span>
+            <span style="color: red;"><br/>ᠬᠠᠷᠢᠭᠤᠯᠲᠠ ᠶᠢᠨ ᠵᠠᠳᠠᠯᠤᠯᠲᠠ：<br/></span>
             <p v-html="currentQuestion.description"></p>
           </div>
         </a-layout-content>
@@ -249,5 +249,27 @@ export default {
 </script>
 
 <style scoped>
+  .bootstrap-table .fixed-table-container .table thead th .th-inner {
+    -webkit-writing-mode: vertical-lr;
+  }
 
+  .ant-breadcrumb a {
+    -webkit-writing-mode: vertical-lr;
+  }
+
+  .ant-breadcrumb span {
+    -webkit-writing-mode: vertical-lr;
+  }
+
+  .page-header .detail .main .title {
+    -webkit-writing-mode: vertical-lr;
+  }
+
+  .ant-menu-item span, .ant-menu-submenu-title span {
+    -webkit-writing-mode: vertical-lr;
+  }
+
+  .ant-layout-header {
+    height: 164px;
+  }
 </style>

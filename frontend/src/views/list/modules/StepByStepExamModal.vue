@@ -52,7 +52,7 @@
         </div>
         <div v-show="currentStep === 1">
           <a-form-item
-            label="单选题"
+            label="ᠭᠠᠭᠴᠠ ᠰᠣᠩᠭᠤᠯᠲᠠᠲᠤ ᠰᠡᠳᠦᠪ"
             :labelCol="labelCol"
             :wrapperCol="wrapperCol"
           >
@@ -61,11 +61,11 @@
               :max="20"
               v-decorator="['radioScore', {initialValue: '5',rules: [{required: true}]}]"
             />
-            分
+            ᠬᠤᠪᠢ
           </a-form-item>
 
           <a-form-item
-            label="多选题"
+            label="ᠣᠯᠠᠨ ᠬᠠᠷᠢᠭᠤᠯᠲᠠ ᠲᠠᠢ ᠰᠣᠩᠭᠤᠬᠤ ᠰᠡᠳᠦᠪ"
             :labelCol="labelCol"
             :wrapperCol="wrapperCol"
           >
@@ -74,11 +74,11 @@
               :max="20"
               v-decorator="['checkScore', {initialValue: '5',rules: [{required: true}]}]"
             />
-            分
+            ᠬᠤᠪᠢ
           </a-form-item>
 
           <a-form-item
-            label="判断题"
+            label="ᠮᠠᠭᠠᠳᠯᠠᠬᠤ ᠰᠡᠳᠦᠪ"
             :labelCol="labelCol"
             :wrapperCol="wrapperCol"
           >
@@ -87,7 +87,7 @@
               :max="20"
               v-decorator="['judgeScore', {initialValue: '5',rules: [{required: true}]}]"
             />
-            分
+            ᠬᠤᠪᠢ
           </a-form-item>
         </div>
 

@@ -1,7 +1,7 @@
 <template>
   <a-card :bordered="false">
     <div id="toolbar">
-      <a-button type="primary" icon="plus" @click="$refs.createExamModal.create()">新建</a-button>&nbsp;
+      <a-button type="primary" icon="plus" @click="$refs.createExamModal.create()">ᠰᠢᠨᠡ ᠪᠡᠷ ᠪᠠᠶᠢᠭᠤᠯᠬᠤ</a-button>&nbsp;
       <a-button type="primary" icon="reload" @click="loadAll()">刷新</a-button>
     </div>
     <BootstrapTable
@@ -39,7 +39,7 @@ export default {
       // 表头
       columns: [
         {
-          title: '序号',
+          title: 'ᠳᠤᠭᠠᠷ',
           field: 'serial',
           formatter: function (value, row, index) {
             return index + 1 // 这样的话每翻一页都会重新从1开始，
@@ -68,7 +68,7 @@ export default {
           field: 'score'
         },
         {
-          title: '创建人',
+          title: 'ᠡᠭᠦᠰᠭᠡᠨ ᠪᠠᠶᠢᠭᠤᠯᠤᠭᠴᠢ',
           field: 'creator'
         },
         {
@@ -76,17 +76,17 @@ export default {
           field: 'elapse'
         },
         {
-          title: '更新时间',
+          title: 'ᠰᠢᠨᠡᠳᠬᠡᠬᠦ ᠴᠠᠭ',
           field: 'updateTime'
         },
         {
-          title: '操作',
+          title: 'ᠠᠵᠢᠯᠯᠠᠬᠤ',
           field: 'action',
           width: '150px',
           formatter: (value, row) => {
-            return '<button type="button" class="btn btn-success view-exam">详情</button>' +
+            return '<button type="button" class="btn btn-success view-exam">ᠨᠠᠷᠢᠨ ᠪᠠᠶᠢᠳᠠᠯ</button>' +
               '&nbsp;&nbsp;' +
-              '<button type="button" class="btn btn-success edit-exam">编辑</button>'
+              '<button type="button" class="btn btn-success edit-exam">ᠨᠠᠶᠢᠷᠠᠭᠤᠯᠤᠭᠴᠢ</button>'
           },
           events: {
             'click .view-exam': function (e, value, row, index) {
@@ -165,3 +165,28 @@ export default {
   }
 }
 </script>
+<style lang="less">
+  .bootstrap-table .fixed-table-container .table thead th .th-inner {
+    -webkit-writing-mode: vertical-lr;
+  }
+
+  .ant-breadcrumb a {
+    -webkit-writing-mode: vertical-lr;
+  }
+
+  .ant-breadcrumb span {
+    -webkit-writing-mode: vertical-lr;
+  }
+
+  .page-header .detail .main .title {
+    -webkit-writing-mode: vertical-lr;
+  }
+
+  .ant-menu-item span, .ant-menu-submenu-title span {
+    -webkit-writing-mode: vertical-lr;
+  }
+
+  .ant-layout-header {
+    height: 164px;
+  }
+</style>

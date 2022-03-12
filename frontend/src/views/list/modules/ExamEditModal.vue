@@ -1,9 +1,9 @@
 <template>
-  <a-modal title="更新考试" :width="640" :visible="visible" :confirmLoading="confirmLoading" @cancel="handleCancel">
+  <a-modal title="ᠰᠢᠯᠭᠠᠯᠲᠠ ᠶᠢ ᠰᠢᠨᠡᠳᠬᠡᠬᠦ" :width="640" :visible="visible" :confirmLoading="confirmLoading" @cancel="handleCancel">
     <a-spin :spinning="confirmLoading">
       <a-steps :current="currentStep" :style="{ marginBottom: '28px' }" size="small">
-        <a-step title="考试描述" />
-        <a-step title="每题分数" />
+        <a-step title="ᠰᠢᠯᠭᠠᠯᠲᠠ ᠶᠢᠨ ᠳᠦᠷᠰᠦᠯᠡᠯ" />
+        <a-step title="ᠰᠡᠳᠦᠪ ᠪᠦᠷᠢ ᠶᠢᠨ ᠬᠤᠪᠢ" />
         <a-step title="选择题目" />
       </a-steps>
       <a-form :form="form">
@@ -32,7 +32,7 @@
             <a-input-number :min="1" :max="20" v-model="checkScore" />
             分
           </a-form-item>
-          <a-form-item label="判断题" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <a-form-item label="ᠮᠠᠭᠠᠳᠯᠠᠬᠤ ᠰᠡᠳᠦᠪ" :labelCol="labelCol" :wrapperCol="wrapperCol">
             <a-input-number :min="1" :max="20" v-model="judgeScore" />
             分
           </a-form-item>

@@ -8,7 +8,7 @@ export const asyncRouterMap = [
     path: '/',
     name: 'index',
     component: BasicLayout,
-    meta: { title: '在线考试系统' },
+    meta: { title: 'ᠤᠲᠠᠰᠤᠨ ᠳᠠᠬᠢ ᠰᠢᠯᠭᠠᠯᠲᠠ ᠶᠢᠨ ᠰᠢᠰᠲ᠋ᠧᠮ' },
     redirect: '/dashboard/home',
     children: [
       // dashboard
@@ -18,13 +18,13 @@ export const asyncRouterMap = [
         redirect: '/dashboard/home',
         component: RouteView,
         hideChildrenInMenu: true,
-        meta: { title: '首页', keepAlive: true, icon: 'home', permission: ['dashboard'] },
+        meta: { title: 'ᠡᠬᠢᠨ ᠦ ᠨᠢᠭᠤᠷ', keepAlive: true, icon: 'home', permission: ['dashboard'] },
         children: [
           {
             path: '/dashboard/home',
             name: 'Workplace',
             component: () => import('../views/Home'),
-            meta: { title: '简介', keepAlive: true, permission: ['dashboard'] }
+            meta: { title: 'ᠲᠣᠪᠴᠢ ᠲᠠᠨᠢᠯᠴᠠᠭᠤᠯᠭᠠ', keepAlive: true, permission: ['dashboard'] }
           }
         ]
       },
@@ -35,7 +35,7 @@ export const asyncRouterMap = [
         redirect: '/list/exam-card',
         component: PageView,
         hideChildrenInMenu: true,
-        meta: { title: '考试卡片', keepAlive: true, icon: examList, permission: ['exam-card'] },
+        meta: { title: 'ᠰᠢᠯᠭᠠᠯᠲᠠ ᠶᠢᠨ ᠺᠠᠷᠲ', keepAlive: true, icon: examList, permission: ['exam-card'] },
         children: [
           {
             path: '/list/exam-card',
@@ -51,14 +51,14 @@ export const asyncRouterMap = [
         redirect: '/list/question-table-list',
         component: PageView,
         hideChildrenInMenu: true,
-        meta: { title: '问题管理', keepAlive: true, icon: questionAdmin, permission: ['question-admin'] },
+        meta: { title: 'ᠠᠰᠠᠭᠤᠳᠠᠯ ᠤᠨ ᠬᠠᠮᠢᠶᠠᠷᠤᠯᠲᠠ', keepAlive: true, icon: questionAdmin, permission: ['question-admin'] },
         children: [
           {
             path: '/list/question-table-list',
             name: 'QuestionTableListWrapper',
             hideChildrenInMenu: true, // 强制显示 MenuItem 而不是 SubMenu
             component: () => import('../views/list/QuestionTableList'),
-            meta: { title: '问题列表', keepAlive: true, permission: ['question-admin'] }
+            meta: { title: 'ᠠᠰᠠᠭᠤᠯᠲᠠ ᠶᠢᠨ ᠬᠦᠰᠦᠨᠦᠭ', keepAlive: true, permission: ['question-admin'] }
           }
         ]
       },
@@ -69,14 +69,14 @@ export const asyncRouterMap = [
         component: PageView,
         redirect: '/list/exam-table-list',
         hideChildrenInMenu: true,
-        meta: { title: '考试管理', icon: examAdmin, permission: ['exam-table-list'] },
+        meta: { title: 'ᠰᠢᠯᠭᠠᠯᠲᠠ ᠶᠢᠨ ᠬᠠᠮᠢᠶᠠᠷᠤᠯᠲᠠ', icon: examAdmin, permission: ['exam-table-list'] },
         children: [
           {
             path: '/list/exam-table-list',
             name: 'ExamTableListWrapper',
             hideChildrenInMenu: true, // 强制显示 MenuItem 而不是 SubMenu
             component: () => import('../views/list/ExamTableList'),
-            meta: { title: '考试列表', keepAlive: true, permission: ['exam-table-list'] }
+            meta: { title: 'ᠰᠢᠯᠭᠠᠯᠲᠠ ᠶᠢᠨ ᠬᠦᠰᠦᠨᠦᠭ', keepAlive: true, permission: ['exam-table-list'] }
           }
         ]
       },
@@ -86,13 +86,13 @@ export const asyncRouterMap = [
         redirect: '/list/exam-record-list',
         component: PageView,
         hideChildrenInMenu: true,
-        meta: { title: '我的考试', keepAlive: true, icon: 'user', permission: ['exam-record-list'] },
+        meta: { title: 'ᠮᠢᠨᠦ ᠰᠢᠯᠭᠠᠯᠲᠠ', keepAlive: true, icon: 'user', permission: ['exam-record-list'] },
         children: [
           {
             path: '/list/exam-record-list',
             name: 'ExamRecordList',
             component: () => import('../views/list/ExamRecordList'),
-            meta: { title: '我参与过的考试列表', keepAlive: true, permission: ['exam-record-list'] }
+            meta: { title: 'ᠮᠢᠨᠦ ᠣᠷᠣᠯᠴᠠᠵᠤ ᠥᠩᠭᠡᠷᠡᠭᠰᠡᠨ ᠰᠢᠯᠭᠠᠯᠲᠠ ᠶᠢᠨ ᠬᠦᠰᠦᠨᠦᠭ', keepAlive: true, permission: ['exam-record-list'] }
           }
         ]
       },

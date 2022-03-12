@@ -211,8 +211,8 @@ export default {
       // 延迟 1 秒显示欢迎信息
       setTimeout(() => {
         this.$notification.success({
-          message: '欢迎',
-          description: `${timeFix()}，欢迎回来`
+          message: 'ᠪᠠᠶᠠᠷᠯᠠᠨ ᠤᠭᠲᠤᠶᠠ',
+          description: `${timeFix()}，ᠬᠠᠷᠢᠵᠤ ᠢᠷᠡᠬᠦ ᠶᠢ ᠪᠠᠶᠠᠷᠯᠠᠨ ᠤᠭᠲᠤᠵᠤ ᠪᠠᠢᠨᠠ`
         })
       }, 1000)
     },

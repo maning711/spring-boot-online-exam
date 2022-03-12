@@ -10,14 +10,14 @@
           <a-menu-item key="1">
             <router-link :to="{ name: 'settings' }">
               <a-icon type="setting"/>
-              <span>账户设置</span>
+              <span>ᠲᠡᠡᠭᠰᠡᠠ ᠡᠷᠦᠭᠡ ᠪᠠᠶᠢᠭᠤᠯᠬᠤ</span>
             </router-link>
           </a-menu-item>
           <a-menu-divider/>
           <a-menu-item key="3">
             <a href="javascript:;" @click="handleLogout">
               <a-icon type="logout"/>
-              <span>退出登录</span>
+              <span>ᠲᠡᠮᠳᠡᠭᠯᠡᠬᠦ ᠡᠴᠡ ᠭᠠᠷᠬᠤ</span>
             </a>
           </a-menu-item>
         </a-menu>
